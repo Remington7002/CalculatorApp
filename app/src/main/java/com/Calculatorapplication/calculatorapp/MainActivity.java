@@ -13,8 +13,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    int  result=0;
+    int Firstnumber;
+    String operator;
+    boolean newnumber;
 
+    int result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Button b7=findViewById(R.id.btn7);
         Button b8=findViewById(R.id.btn8);
         Button b9=findViewById(R.id.btn9);
+        Button Clear=findViewById(R.id.Clear);
 
 
 
@@ -102,25 +106,49 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String n1=Screen.getText().toString();
-                int number=Integer.parseInt(n1);
-                result=number+result;
                 Screen.setText("");
+//                int number=Integer.parseInt(n1);
+//                result=number+result;
+//                Screen.setText("");
+                Firstnumber=Integer.parseInt(n1);
+                result+=Firstnumber;
+
+
 
             }
         });
         Equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String es=Screen.getText().toString();
-                int enumber=Integer.parseInt(es);
-                result=enumber+result;
-                String res=new String();
-                res=Integer.toString(result);
-                Screen.setText(res);
-                result=0;
+                if (result!=0) {
+                    String es = Screen.getText().toString();
+                    int enumber = Integer.parseInt(es);
+                    result = enumber + result;
+                    String res = new String();
+                    res = Integer.toString(result);
+                    Screen.setText(res);
+                    result = 0;
+                }
+                else{
+                    Screen.setText("");
+                }
             }
         });
-
+        Subtract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String n1=Screen.getText().toString();
+                Screen.setText("");
+                Firstnumber=Integer.parseInt(n1);
+                result-=Firstnumber;
+            }
+        });
+        Clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Screen.setText("");
+            }
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
