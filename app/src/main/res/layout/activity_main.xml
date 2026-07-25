@@ -118,65 +118,69 @@
 
     <Button
         android:id="@+id/btn_Equals"
-        android:layout_width="178dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="40dp"
         android:text="="
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Add" />
 
     <Button
         android:id="@+id/btn_Add"
-        android:layout_width="62dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="108dp"
+        android:layout_width="56dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="100dp"
         android:text="+"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnminus"
-        android:layout_width="62dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="108dp"
+        android:layout_width="56dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="100dp"
         android:text="-"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnmultiply"
-        android:layout_width="62dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="56dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="184dp"
         android:text="x"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btndivide"
-        android:layout_width="62dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="56dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="184dp"
         android:text="/"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -189,11 +193,12 @@
         android:layout_marginEnd="16dp"
         android:background="@android:drawable/alert_dark_frame"
         android:ems="10"
-        android:inputType="text"
-
         android:hint="0"
+
+        android:inputType="text"
         android:textAlignment="textEnd"
         android:textColor="@color/white"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

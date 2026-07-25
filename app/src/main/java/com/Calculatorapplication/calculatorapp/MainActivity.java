@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    int  result=0;
 
 
     @Override
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        int[] numbers=new int[]{};
+
         Button b1=findViewById(R.id.Btn1);
         Button b2=findViewById(R.id.btn2);
         Button b3=findViewById(R.id.btn3);
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         Button b7=findViewById(R.id.btn7);
         Button b8=findViewById(R.id.btn8);
         Button b9=findViewById(R.id.btn9);
+
+
 
         Button Addtion=findViewById(R.id.btn_Add);
         Button Subtract=findViewById(R.id.btnminus);
@@ -93,6 +98,29 @@ public class MainActivity extends AppCompatActivity {
                 Screen.append(""+9);
             }
         });
+        Addtion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String n1=Screen.getText().toString();
+                int number=Integer.parseInt(n1);
+                result=number+result;
+                Screen.setText("");
+
+            }
+        });
+        Equals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String es=Screen.getText().toString();
+                int enumber=Integer.parseInt(es);
+                result=enumber+result;
+                String res=new String();
+                res=Integer.toString(result);
+                Screen.setText(res);
+                result=0;
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
